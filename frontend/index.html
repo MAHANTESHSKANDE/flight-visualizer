@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Path Visualizer - Aviation Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🛫 Flight Path Visualizer</h1>
+            <p>Real-time Aviation Analytics Dashboard</p>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls">
+            <select id="airportSelect">
+                <option value="JFK">JFK (New York)</option>
+                <option value="LAX">LAX (Los Angeles)</option>
+                <option value="ORD">ORD (Chicago)</option>
+                <option value="DFW">DFW (Dallas)</option>
+                <option value="ATL">ATL (Atlanta)</option>
+            </select>
+            <button onclick="loadFlights()">🔄 Refresh Flights</button>
+        </div>
+
+        <!-- Map -->
+        <div id="map" class="map-container"></div>
+
+        <!-- Stats Dashboard -->
+        <div class="dashboard">
+            <div class="stat-card">
+                <h3>📊 Today's Stats</h3>
+                <div id="stats"></div>
+            </div>
+            <div class="stat-card">
+                <h3>🌤️ Weather</h3>
+                <div id="weather"></div>
+            </div>
+        </div>
+
+        <!-- Delay Predictor -->
+        <div class="predictor">
+            <h3>🔮 Delay Predictor</h3>
+            <input type="number" id="distance" placeholder="Distance (km)">
+            <input type="number" id="windSpeed" placeholder="Wind Speed (km/h)">
+            <button onclick="predictDelay()">Predict Delay</button>
+            <div id="prediction"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

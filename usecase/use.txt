@@ -1,0 +1,5 @@
+terminal:
+cd backend
+python app.py
+
+go to index.html and  = open withliveserver on 
